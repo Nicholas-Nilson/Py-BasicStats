@@ -124,5 +124,10 @@ print(f"{mode}")
 #     mode_y = return_mode(y_list)
 #     print(f"The mode of x's is {mode_x}")  #may need a loop here to print out multiple modes if they occur.
 #     print(f"The mode of y's is {mode_y}")
+    median_x = return_median(x_list)
+    median_y = return_median(y_list)
+    print(f"The median of x's is {median_x}")
+    print(f"The median of y's is {median_y}")
+
     # print(x_list)
     # print(y_list)
