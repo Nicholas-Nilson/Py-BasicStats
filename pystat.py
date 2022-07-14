@@ -43,7 +43,7 @@ def return_mode(list_in):
             highest_occurrence = list_in.count(num)
             mode = num
             if_multiple_modes = []
-        if list_in.count(num) == highest_occurrence:
+        if list_in.count(num) == highest_occurrence and num != mode:
             if_multiple_modes.append(num)
     if len(if_multiple_modes) > 1 and highest_occurrence > 1:
         return set(if_multiple_modes)
@@ -52,6 +52,9 @@ def return_mode(list_in):
     else:
         return mode
 
+test_list = [1, 2, 2, 3, 4, 5, 6]
+mode = return_mode(test_list)
+print(mode)
 
 # file = open('dataOne.csv')
 # csvreader = csv.reader(file)
@@ -68,9 +71,7 @@ def return_mode(list_in):
 # ## print(rows)
 # ## print(header)
 
-test_list = [1, 2, 2, 3, 4, 5, 6]
-mode = return_mode(test_list)
-print(mode)
+
 
 
 
