@@ -43,7 +43,7 @@ def return_mode(list_in):
             highest_occurrence = list_in.count(num)
             mode = num
             if_multiple_modes = []
-        if list_in.count(num) == highest_occurrence and num != mode:
+        if list_in.count(num) == highest_occurrence and num not in if_multiple_modes:
             if_multiple_modes.append(num)
     if len(if_multiple_modes) > 1 and highest_occurrence > 1:
         return set(if_multiple_modes)
@@ -52,9 +52,20 @@ def return_mode(list_in):
     else:
         return mode
 
-test_list = [1, 2, 2, 3, 4, 5, 6]
-mode = return_mode(test_list)
-print(mode)
+
+def return_median(list_in):
+    mid = len(list_in) // 2
+    if len(list_in) % 2 == 0:
+        return (list_in[mid-1], list_in[mid])
+    else:
+        return list_in[mid]
+
+
+
+
+test_list = [1, 2,  3,  4,  5, 6]
+mode = return_median(test_list)
+print(f"{mode}")
 
 # file = open('dataOne.csv')
 # csvreader = csv.reader(file)
@@ -86,7 +97,7 @@ print(mode)
 #         exit()
 #     file_name = sys.argv[1]
 #
-#     ## file_name = 'dataThree.csv'
+#    ## file_name = 'dataThree.csv'
 #     if is_csv(file_name):
 #         csvreader = csv.reader(file_name)
 #         csv_header = extract_header(csvreader)
@@ -109,6 +120,9 @@ print(mode)
 #     mean_y = return_mean(y_list)
 #     print(f"The mean of x's is {mean_x}")
 #     print(f"The mean of y's is {mean_y}")
-
+#     mode_x = return_mode(x_list)
+#     mode_y = return_mode(y_list)
+#     print(f"The mode of x's is {mode_x}")  #may need a loop here to print out multiple modes if they occur.
+#     print(f"The mode of y's is {mode_y}")
     # print(x_list)
     # print(y_list)
